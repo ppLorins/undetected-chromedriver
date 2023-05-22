@@ -31,13 +31,13 @@ with codecs.open(
         raise RuntimeError("unable to determine version")
 
 description = (
-    "Selenium.webdriver.Chrome replacement with compatiblity for Brave, and other Chromium based browsers.",
-    "Not triggered by CloudFlare/Imperva/hCaptcha and such.",
-    "NOTE: results may vary due to many factors. No guarantees are given, except for ongoing efforts in understanding detection algorithms.",
+    "(just an impatient fix for headless bug as: "
+    "https://github.com/ultrafunkamsterdam/undetected-chromedriver/issues/1252#issuecomment-1544900464)"
+    ",can remove anytime once the main stream updated",
 )
 
 setup(
-    name="undetected-chromedriver",
+    name="undetected-chromedriver-arthur",
     version=version,
     packages=["undetected_chromedriver"],
     install_requires=[
@@ -46,7 +46,7 @@ setup(
         "websockets",
     ],
     package_data={"undetected_chromedriver": [os.path.join("example", "example.py")]},
-    url="https://github.com/ultrafunkamsterdam/undetected-chromedriver",
+    url="https://github.com/ppLorins/undetected-chromedriver/tree/fix-headless-version-issue",
     license="GPL-3.0",
     author="UltrafunkAmsterdam",
     author_email="info@blackhat-security.nl",
