@@ -17,7 +17,7 @@ by UltrafunkAmsterdam (https://github.com/ultrafunkamsterdam)
 from __future__ import annotations
 
 
-__version__ = "3.4.8"
+__version__ = "3.4.9"
 
 import json
 import logging
@@ -391,10 +391,11 @@ class Chrome(selenium.webdriver.chrome.webdriver.WebDriver):
         version = None
         if headless or options.headless:
             version = self.patcher.version_main
-        if version and version < 108:
-            options.add_argument("--headless=chrome")
-        else:
-            options.add_argument("--headless=new")
+        if version:
+            if version < 108:
+                options.add_argument("--headless=chrome")
+            else:
+                options.add_argument("--headless=new")
 
         options.add_argument("--window-size=1920,1080")
         options.add_argument("--start-maximized")
