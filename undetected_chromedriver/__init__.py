@@ -17,7 +17,7 @@ by UltrafunkAmsterdam (https://github.com/ultrafunkamsterdam)
 from __future__ import annotations
 
 
-__version__ = "3.4.7"
+__version__ = "3.4.8"
 
 import json
 import logging
@@ -388,6 +388,7 @@ class Chrome(selenium.webdriver.chrome.webdriver.WebDriver):
         #     elif self.patcher.version_main >= 108:
         #         options.add_argument("--headless=new")
 
+        version = None
         if headless or options.headless:
             version = self.patcher.version_main
         if version and version < 108:
